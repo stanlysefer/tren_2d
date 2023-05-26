@@ -26,14 +26,15 @@ frame_graficacion.place(x=10 ,y=10)
 c = Canvas(frame_graficacion, width=x, height=y)
 c.config(bg="white")
 c.place(x=10, y=10)
-""""
+"""
 #------------------
 photo=PhotoImage(file='img/trenSistemas.png')
-c.create_image(120, 1, image=photo, anchor=NW)
-"""
+c.create_image(120, -10, image=photo, anchor=NW)
+
 #creacion del tren
 c.create_line(x/2,-y,x/2,y,fill="black")
 c.create_line(-x,y/2,x,y/2,fill="black")
+"""
 c.create_rectangle(x/2+70,y/2,x/2-80,y/2+75,fill="blue")
 c.create_rectangle(x/2-10,y/2,x/2+70,y/2-60,fill="red")
 c.create_oval(x/2+20,y/2+90,x/2-20,y/2+50,fill="pale green")
@@ -61,6 +62,13 @@ c.create_oval(x/2+40,y/2-20,x/2+20,y/2-20,fill="black")
 frame_controles=Frame(ventana_principal)
 frame_controles.config(bg="green", width=480, height=230)
 frame_controles.place(x=10, y=260)
+
+
+
+#boton salir
+boton_salir = Button(frame_controles, text="Salir", command=ventana_principal.destroy)
+boton_salir.place(x=200, y=10)
+
 
 #desplegar ventana
 ventana_principal.mainloop()
